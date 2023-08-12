@@ -1,0 +1,25 @@
+.nav-item {
+    height: 100%;
+}
+
+.nav-link {
+    height: 100%;
+    margin: 0;
+}
+
+.nav-link-text {
+    color: var(--bs-light);
+    margin: 10px 25px;
+    border: 5px;
+    border-color: black;
+}
+
+#navbar-container {
+    background-color: var(--bs-primary);
+    border-bottom: 2px;
+    border-color: black;
+}
+
+.navbar-brand {
+    color: var(--bs-light);
+}

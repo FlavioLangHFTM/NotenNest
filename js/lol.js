@@ -1,1 +1,1 @@
-bla
+alert("LOL");

@@ -1,0 +1,1 @@
+<h1 class="m-auto p-auto">Hi <?php echo getUrlParamOrEmptyString('name') ?></h1>

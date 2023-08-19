@@ -1,0 +1,23 @@
+{
+  "name": "notennest",
+  "version": "1.0.0",
+  "description": "The BEST website for renting musical equipment :) (Will definitely get the best grade in this class)",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlavioLangHFTM/NotenNest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlavioLangHFTM/NotenNest/issues"
+  },
+  "homepage": "https://github.com/FlavioLangHFTM/NotenNest#readme",
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.1"
+  }
+}

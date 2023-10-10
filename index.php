@@ -1,59 +1,72 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <title>NotenNest</title>
 
-    <link href="bootstrap/main.css" rel="stylesheet">
-    <!-- <link href="css/index.css" rel="stylesheet"> -->
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  <title>NotenNest</title>
 
-    <!-- Simple Routing Logic -->
-    <!-- The .htaccess file redirects all requests to this file (index.php) where we do our own routing to the individual pages -->
-    <!-- This allows us to load components needed on every page (header and footer) -->
-    <?php
+  <link href="/NotenNest/bootstrap/main.css" rel="stylesheet">
+  <!-- <link href="css/index.css" rel="stylesheet"> -->
+  <script src="/NotenNest/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
 
-      // Define the base url of the website
-      $BASE_URL = '/NotenNest';
+<body>
 
-      // Get the request path
-      $request = $_SERVER['REQUEST_URI'];
+  <!-- Simple Routing Logic -->
+  <!-- The .htaccess file redirects all requests to this file (index.php) where we do our own routing to the individual pages -->
+  <!-- This allows us to load components needed on every page (header and footer) -->
+  <?php
 
-      // Remove the base url from the request path.
-      // This allows us to always get the current path no matter in what folder the website is hosted in.
-      // This CURRENT_PATH variable can be used on all sub pages.
-      $CURRENT_PATH = str_replace($BASE_URL, '', $request);
+  // Define the base url of the website
+  $BASE_URL = '/NotenNest';
 
-      // Load utility functions
-      require __DIR__ . '/util/utils.php';
+  // Get the request path
+  $request = $_SERVER['REQUEST_URI'];
 
-      // Loade the header
-      require __DIR__ . '/header.php';
+  // Remove the base url from the request path.
+  // This allows us to always get the current path no matter in what folder the website is hosted in.
+  // This CURRENT_PATH variable can be used on all sub pages.
+  $CURRENT_PATH = str_replace($BASE_URL, '', $request);
 
-      // Check current path and load the corresponding page
-      // Add routing for new pages here
-      switch($CURRENT_PATH) {
-        case '/':
-          require __DIR__ . '/pages/home.php';
-          break;
-        case '/home':
-          require __DIR__ . '/pages/home.php';
-          break;
-        case '/categories':
-          require __DIR__ . '/pages/categories.php';
-          break;
-        default:
-          require __DIR__ . '/pages/notFound.php';
-          break;
-      }
+  // Load utility functions
+  require __DIR__ . '/util/utils.php';
 
-      // Load the footer
-      require __DIR__ . '/footer.php';
-    ?>
+  // Loade the header
+  require __DIR__ . '/header.php';
 
 
-  </body>
+  // Check current path and load the corresponding page
+  // Add routing for new pages here
+  switch ($CURRENT_PATH) {
+    case '/':
+      require __DIR__ . '/pages/home.php';
+      break;
+    case '/home':
+      require __DIR__ . '/pages/home.php';
+      break;
+    case '/instruments/categories':
+      require __DIR__ . '/pages/categories.php';
+      break;
+    case '/partners':
+      require __DIR__ . '/pages/partners.php';
+      break;
+    case '/contact':
+      require __DIR__ . '/pages/contact.php';
+      break;
+    case '/about':
+      require __DIR__ . '/pages/about.php';
+      break;
+    default:
+      require __DIR__ . '/pages/notFound.php';
+      break;
+  }
+
+  // Load the footer
+  require __DIR__ . '/footer.php';
+  ?>
+
+
+</body>
+
 </html>

@@ -31,27 +31,55 @@ class dbService
         return true;
     }
 
-    function getProductsByCategory(string $category): array
+    function getProductsByCategory(string $category, string $manufacturer, string $price): array
     {
 
         $result = [];
 
         if ($this->connect()) {
-            $stmt = $this->con->prepare('SELECT inventory.id, inventory.name, inventory.description, manufacturer.name AS manufacturer, inventory.available, inventory.price, inventory.category, inventory.product_image FROM notennest.inventory INNER JOIN notennest.manufacturer ON inventory.manufacturerID=manufacturer.id WHERE inventory.category = ?');
-            $stmt->execute([$category]);
+
+            $manufacturerFilterActive = false;
+            $priceFilterActive = false;
+
+            $stmt_string = 'SELECT inventory.id, inventory.name, inventory.description, manufacturer.name AS manufacturer, inventory.available, inventory.price, inventory.category, inventory.product_image FROM notennest.inventory INNER JOIN notennest.manufacturer ON inventory.manufacturerID=manufacturer.id WHERE inventory.category = :category';
+            if($manufacturer !== 'all' && $manufacturer !== '') {
+                $manufacturerFilterActive = true;
+                $stmt_string = $stmt_string . ' AND manufacturer.id = :manufacturer';
+            }
+
+            if($price !== 'all' && $price !== '') {
+                $priceFilterActive = true;
+                $stmt_string = $stmt_string . ' AND inventory.price BETWEEN :low AND :high';
+            }
+
+            $stmt = $this->con->prepare($stmt_string);
+            $stmt->bindParam(':category', $category);
+            if($manufacturerFilterActive) {
+                $stmt->bindParam(':manufacturer', $manufacturer);
+            }
+
+            if ($priceFilterActive) {
+                $filterValues = explode('-', $price);
+                $stmt->bindParam(':low', $filterValues[0]);
+                $stmt->bindParam(':high', $filterValues[1]);
+            }
+
+            $stmt->execute();
 
             if ($stmt !== false && $stmt->rowCount() > 0) {
                 foreach ($stmt as $row) {
-                    array_push($result, new InventoryItem(
-                        $row['id'],
-                        $row['name'],
-                        $row['description'],
-                        $row['manufacturer'],
-                        $row['available'],
-                        $row['price'],
-                        $row['category'],
-                        $row['product_image']
-                    )
+                    array_push(
+                        $result,
+                        new InventoryItem(
+                            $row['id'],
+                            $row['name'],
+                            $row['description'],
+                            $row['manufacturer'],
+                            $row['available'],
+                            $row['price'],
+                            $row['category'],
+                            $row['product_image']
+                        )
                     );
                 }
             }
@@ -81,6 +109,23 @@ class dbService
             }
         }
         return null;
+    }
+
+    function getManufacturerForProductCategory(string $category): array
+    {
+
+        $result = [];
+        if($this->connect()) {
+            $stmt = $this->con->prepare('SELECT DISTINCT m.id AS id, m.name AS name FROM manufacturer m JOIN inventory i ON m.id = i.manufacturerID WHERE i.category = :category;');
+            $stmt->bindParam(":category", $category);
+            $stmt->execute();
+            if($stmt !== false && $stmt->rowCount() > 0) {
+                foreach($stmt as $row) {
+                    array_push($result, new Manufacturer($row['id'], $row['name']));
+                }
+            }
+        }
+        return $result;
     }
 
     function setAvailabilityForItem(int $id, bool $available): bool

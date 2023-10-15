@@ -3,9 +3,12 @@ global $DB_SERVICE;
 
 $items = [];
 $category = getUrlParamOrEmptyString('category');
+$manufacturerFilter = getUrlParamOrEmptyString('manufacturer');
+$priceFilter = getUrlParamOrEmptyString('price');
 
 if ($category != '') {
-    $items = $DB_SERVICE->getProductsByCategory($category);
+    $items = $DB_SERVICE->getProductsByCategory($category, $manufacturerFilter, $priceFilter);
+    $manufacturers = $DB_SERVICE->getManufacturerForProductCategory($category);
 } else {
     header("Location: " . $BASE_URL);
     die();
@@ -25,34 +28,47 @@ if ($category != '') {
 
     </div>
     <div id="pageContent" class="row gap-2">
-        <div id="leftBar" class="col">
+        <div id="leftBar" class="col" align="center">
             <div id="itemFilter" class="card shadow-sm p-2 col">
                 <h4 class="text-center">Filter</h4>
-                <form class="container gap-2">
+                <form action="<?php echo $BASE_URL . '/instruments/articles' ?>" class="container gap-2">
+                    <input name="category" id="category" type="hidden" value="<?php echo $category ?>" />
                     <div class="row mb-3">
                         <label for="manufacturer">Hersteller:</label>
                         <select name="manufacturer" id="manufacturer">
-                            <option value="Fender">Fender</option>
-                            <option value="Gibson">Gibson</option>
+                            <option value="all">alle</option>
+                            <?php
+                                foreach($manufacturers as $manufacturer) {
+                                    ?>
+                                        <option <?php if ($manufacturer->getId() == $manufacturerFilter) echo 'selected' ?> value="<?php echo $manufacturer->getId() ?>"><?php echo $manufacturer->getName() ?></option>
+                                    <?php
+                                }
+                            ?>
                         </select>
                     </div>
 
                     <div class="row mb-3">
                         <label for="cars">Preis:</label>
                         <select name="price" id="price">
-                            <option value="1-10">1CHF - 10CHF</option>
-                            <option value="11-20">10CHF - 20CHF</option>
-                            <option value="21-40">20CHF - 40CHF</option>
-                            <option value="41-100">41CHF - 100CHF</option>
+                            <option value="all">alle</option>
+                            <option <?php if ($priceFilter == '1-10') echo 'selected' ?> value="1-10">1CHF - 10CHF</option>
+                            <option <?php if ($priceFilter == '11-20') echo 'selected' ?> value="11-20">10CHF - 20CHF</option>
+                            <option <?php if ($priceFilter == '21-40') echo 'selected' ?> value="21-40">20CHF - 40CHF</option>
+                            <option <?php if ($priceFilter == '41-100') echo 'selected' ?> value="41-100">41CHF - 100CHF</option>
                         </select>
                     </div>
-
+                    <button type="submit" class="btn btn-success">Filter anwenden</button>
                 </form>
 
             </div>
         </div>
         <div id="middle" class="col-8">
             <?php
+
+            if (count($items) < 1) {
+                echo '<p class="text-center font-bold">Keine Produkte gefunden!</p>';
+            }
+
             /* @var $item InventoryItem */
             foreach ($items as $item) {
                 ?>

@@ -1,7 +1,7 @@
 <link href="/NotenNest/css/header.css" rel="stylesheet" />
 
 <div id="header" class="container-fluid p-0 shadow" style="height: 64px;">
-    <nav class="h-100 navbar navbar-expand-lg bg-body-tertiary p-0">
+    <nav class="h-100 navbar navbar-expand-lg p-0">
         <div id="navbar-container" class="container-fluid h-100">
             <a class="navbar-brand" href="<?php echo $BASE_URL . '/'?>">
                 <h2>NotenNest</h2>
@@ -14,7 +14,7 @@
             <div class="collapse navbar-collapse h-100" id="navbarSupportedContent">
                 <ul class="navbar-nav me-12 mb-2 mb-lg-0 h-100">
                     <li class="nav-item <?php shouldBeHighlighted('instruments') ?>">
-                        <a class="nav-link active" href="<?php echo $BASE_URL . '/instruments/categories' ?>"><span
+                        <a class="nav-link active" href="<?php echo $BASE_URL . '/instruments' ?>"><span
                                 class="nav-link-text d-inline-block">Instrumente</span></a>
                     </li>
                     <li class="nav-item <?php shouldBeHighlighted('partners') ?>">
@@ -38,7 +38,7 @@
     </nav>
 </div>
 <!-- <div id="content" class="" style="height: calc(100hv - 128px);"> -->
-<div id="mainContent" style="flex: 1; padding: 20px; min-height: calc(100vh - 128px);">
+<div id="mainContent" style="flex: 1; padding: 0px 20px; min-height: calc(100vh - 128px);">
     <?php
     function shouldBeHighlighted($url) {
         if (str_contains($GLOBALS['CURRENT_PATH'], $url)) {

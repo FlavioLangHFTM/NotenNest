@@ -17,5 +17,6 @@ body {
     /* This makes the container take up the remaining vertical space */
     padding: 20px;
     /* Adjust padding as needed */
-    min-height: calc(100vh - 128px);
+    min-height: calc(100% - 128px);
+    max-width: 100% !important;
 }

@@ -1,5 +1,6 @@
 <?php
 global $DB_SERVICE;
+global $BASE_URL;
 
 $items = [];
 $category = getUrlParamOrEmptyString('category');
@@ -38,11 +39,15 @@ if ($category != '') {
                         <select name="manufacturer" id="manufacturer">
                             <option value="all">alle</option>
                             <?php
-                                foreach($manufacturers as $manufacturer) {
-                                    ?>
-                                        <option <?php if ($manufacturer->getId() == $manufacturerFilter) echo 'selected' ?> value="<?php echo $manufacturer->getId() ?>"><?php echo $manufacturer->getName() ?></option>
-                                    <?php
-                                }
+                            foreach ($manufacturers as $manufacturer) {
+                                ?>
+                                <option <?php if ($manufacturer->getId() == $manufacturerFilter)
+                                    echo 'selected' ?>
+                                        value="<?php echo $manufacturer->getId() ?>">
+                                    <?php echo $manufacturer->getName() ?>
+                                </option>
+                                <?php
+                            }
                             ?>
                         </select>
                     </div>
@@ -51,27 +56,35 @@ if ($category != '') {
                         <label for="cars">Preis:</label>
                         <select name="price" id="price">
                             <option value="all">alle</option>
-                            <option <?php if ($priceFilter == '1-10') echo 'selected' ?> value="1-10">1CHF - 10CHF</option>
-                            <option <?php if ($priceFilter == '11-20') echo 'selected' ?> value="11-20">10CHF - 20CHF</option>
-                            <option <?php if ($priceFilter == '21-40') echo 'selected' ?> value="21-40">20CHF - 40CHF</option>
-                            <option <?php if ($priceFilter == '41-100') echo 'selected' ?> value="41-100">41CHF - 100CHF</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-success">Filter anwenden</button>
-                </form>
+                            <option <?php if ($priceFilter == '1-10')
+                                echo 'selected' ?> value="1-10">1CHF - 10CHF
+                                </option>
+                                <option <?php if ($priceFilter == '11-20')
+                                echo 'selected' ?> value="11-20">11CHF - 20CHF
+                                </option>
+                                <option <?php if ($priceFilter == '21-40')
+                                echo 'selected' ?> value="21-40">21CHF - 40CHF
+                                </option>
+                                <option <?php if ($priceFilter == '41-100')
+                                echo 'selected' ?> value="41-100">41CHF - 100CHF
+                                </option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-success">Filter anwenden</button>
+                    </form>
 
+                </div>
             </div>
-        </div>
-        <div id="middle" class="col-8">
-            <?php
+            <div id="middle" class="col-8">
+                <?php
 
-            if (count($items) < 1) {
-                echo '<p class="text-center font-bold">Keine Produkte gefunden!</p>';
-            }
+                            if (count($items) < 1) {
+                                echo '<p class="text-center font-bold">Keine Produkte gefunden!</p>';
+                            }
 
-            /* @var $item InventoryItem */
-            foreach ($items as $item) {
-                ?>
+                            /* @var $item InventoryItem */
+                            foreach ($items as $item) {
+                                ?>
                 <div class="row itemCard card shadow-sm hover-shadow mb-2 p-2 d-flex flex-row">
                     <div class="col-3 imageContainer">
                         <img src="https://placehold.co/250x250/tomato/cornsilk?text=<?php echo $item->getName() ?>\nPlaceholder"
@@ -116,17 +129,23 @@ if ($category != '') {
                                     <?php echo $item->getPrice() ?>CHF / Tag
                                 </div>
 
-                                <div class="col items-stretch">
-                                    <button
-                                        class="ml-10 btn border-1 border border-success hover-shadow w-full">Mieten</button>
-                                </div>
+                                <?php if ($item->isAvailable()) {
+                                    ?>
+                                    <div class="col items-stretch">
+                                        <a <?php if ($item->isAvailable())
+                                            echo 'href="' . $BASE_URL . '/instruments/article?id=' . $item->getId() . '"'; ?>
+                                            class="ml-10 btn border-1 border border-success hover-shadow w-full">Mieten</a>
+                                    </div>
+                                    <?php
+                                } ?>
+
                             </div>
                         </div>
                     </div>
                 </div>
                 <?php
-            }
-            ?>
+                            }
+                            ?>
         </div>
         <div id="rightBar" class="col">
             <!-- GOOGLE ADS -->

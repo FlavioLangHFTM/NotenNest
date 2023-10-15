@@ -2,6 +2,15 @@
     <link href="/NotenNest/css/contact.css" rel="stylesheet">
 </head>
 
+<script>
+    function sendAlert() {
+        var email = document.getElementById("email").value;
+        var subject = document.getElementById("subject").value;
+        var message = document.getElementById("message").value;
+        alert("Nachricht gesendet: \n " + "E-Mail: " + email + "\nBetreff: " + subject + "\nNachricht: " + message);
+    }    
+</script>
+
 <style>
     body {
         background-image: linear-gradient(0deg, rgba(215, 215, 217, 1) 20%, rgba(217, 215, 216, 0) 100%), url('./img/background3.jpg');
@@ -15,16 +24,16 @@
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
-            <form>
+            <form onsubmit="sendAlert()">
                 <div id="contact_body">
                     <div>
                         <label for="email"></label>
-                        <input type="email" name="email" required="true" placeholder="E-Mail" />
+                        <input id="email" type="email" name="email" required="true" placeholder="E-Mail" />
                     </div>
 
                     <div>
                         <label for="subject"></label>
-                        <input type="text" name="subject" required="true" placeholder="Betrifft" />
+                        <input id="subject" type="text" name="subject" required="true" placeholder="Betrifft" />
                     </div>
 
                     <div class="form-kontakt-group">

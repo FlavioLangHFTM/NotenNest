@@ -66,6 +66,12 @@
     case '/instruments/articles':
       require __DIR__ . '/pages/articles.php';
       break;
+    case '/instruments/article':
+      require __DIR__ . '/pages/article.php';
+      break;
+    case '/instruments/rent':
+      require __DIR__ . '/pages/rent.php';
+      break;
     default:
       require __DIR__ . '/pages/notFound.php';
       break;

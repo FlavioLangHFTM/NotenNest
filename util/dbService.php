@@ -87,7 +87,7 @@ class dbService
         return $result;
     }
 
-    function getProductById(int $id): InventoryItem
+    function getProductById(int $id): ?InventoryItem
     {
 
         if ($this->connect()) {
@@ -128,7 +128,7 @@ class dbService
         return $result;
     }
 
-    function setAvailabilityForItem(int $id, bool $available): bool
+    function setAvailabilityForItem(int $id, string $available): bool
     {
         if ($this->connect()) {
             $stmt = $this->con->prepare('UPDATE inventory SET available = :available WHERE id = :id;');

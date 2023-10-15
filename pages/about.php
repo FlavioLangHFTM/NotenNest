@@ -1,6 +1,20 @@
 <body>
+    <style>
+        body {
+            background-image: linear-gradient(0deg, rgba(215, 215, 217, 1) 0%, rgba(217, 215, 216, 0) 100%), url('./img/background3.jpg');
+            background-repeat: no-repeat;
+        }
+    </style>
     <div class="col-sm-12" align="center">
-        <h1>Über Uns</h1>
+        <br>
+        <h1 color="white">Über die Firma</h1>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8"></div>
+            <div class="col-sm-2"></div>
+        </div>
+
+        <h1>Gründungsmitglieder</h1>
         <div class="tab-content">
             <div class="tab-content">
                 <div class="row">

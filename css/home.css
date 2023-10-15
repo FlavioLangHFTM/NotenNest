@@ -3,12 +3,6 @@ div {
     text-justify: inter-word;
 }
 
-h1,
-h2,
-h3 {
-    text-align: center;
-}
-
 img {
     box-shadow: 2px 2px 4px;
 }

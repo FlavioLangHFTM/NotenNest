@@ -2,8 +2,14 @@ body {
     background-color: #d7d7d9;
 }
 
-h1 {
+h1,
+h2,
+h3 {
     text-align: center;
+}
+
+p {
+    font-size: 20px;
 }
 
 .center {

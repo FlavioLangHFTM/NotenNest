@@ -18,11 +18,6 @@
             <form>
                 <div id="contact_body">
                     <div>
-                        <label for="name"></label>
-                        <input type="text" name="name" id="name" required="true" placeholder="Name" />
-                    </div>
-
-                    <div>
                         <label for="email"></label>
                         <input type="email" name="email" required="true" placeholder="E-Mail" />
                     </div>

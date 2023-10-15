@@ -1,10 +1,12 @@
-body {
-    background-color: #d7d7d9;
-}
-
 div {
     text-align: justify;
     text-justify: inter-word;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
 }
 
 img {

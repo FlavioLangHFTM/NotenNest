@@ -10,6 +10,11 @@ body {
     background-image: "./img/background3.jpg"
 }
 
+h1,
+h2,
+h3 {
+    text-align: center;
+}
 
 
 .mainContent {

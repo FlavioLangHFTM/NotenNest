@@ -37,7 +37,7 @@
     <br>
     <br>
 
-    <h1>Gründungsmitglieder</h1>
+    <h1>Geschäftsleitung</h1>
     <br>
     <div class="tab-content">
         <div class="tab-content">

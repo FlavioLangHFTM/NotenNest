@@ -1,5 +1,5 @@
 <head>
-    <link href="/NotenNest/css/home.css" rel="stylesheet">
+    <link href="/NotenNest/css/partners.css" rel="stylesheet">
 </head>
 
 <style>
@@ -9,4 +9,23 @@
     }
 </style>
 <br>
+
 <h1>Unsere Partner</h1>
+<div class="col-sm-12">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <a href="https://www.thomannmusic.ch/">
+                <img class="img-fluid" src="./img/thomann-cyan-black.svg">
+            </a>
+            <br>
+            <a href="https://www.musik-produktiv.ch/">
+                <img class="img-fluid" src="./img/musik-produktiv.png">
+            </a>
+            <br>
+            <a href="https://www.gear4music.ch/">
+                <img class="img-fluid" src="./img/gear4music.png">
+            </a>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>

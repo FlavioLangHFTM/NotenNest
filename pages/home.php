@@ -15,19 +15,19 @@
     }
 </style>
 <br>
-<div class="col-sm-12" align="justify">
+<div class="col-sm-12">
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-2">
-            <img class="img-fluid" box-shadow=2px src="./img/guitar.jpg" alt="Flavio">
+            <img class="img-fluid" src="./img/guitar.jpg">
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-2">
-            <img class="img-fluid" src="./img/keyboard.jpg" alt="Flavio">
+            <img class="img-fluid" src="./img/keyboard.jpg">
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-2">
-            <img class="img-fluid" src="./img/ukulele.jpg" alt="Flavio">
+            <img class="img-fluid" src="./img/ukulele.jpg">
         </div>
         <div class="col-sm-2"></div>
     </div>

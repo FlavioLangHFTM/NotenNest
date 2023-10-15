@@ -3,6 +3,10 @@ div {
     text-justify: inter-word;
 }
 
+p {
+    font-size: 20px;
+}
+
 img {
     box-shadow: 2px 2px 4px;
 }

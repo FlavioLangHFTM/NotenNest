@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-2">
-            <a href="/gitarren" target="_blank">
+            <a href="<?php echo $BASE_URL . '/instruments/articles?category=Schlagzeuge' ?>" target="_blank">
                 <img class="img-fluid" box-shadow=2px src="./img/guitar.jpg" alt="Flavio"></a>
         </div>
         <div class="col-sm-1"></div>

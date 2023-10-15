@@ -10,3 +10,43 @@
 </style>
 <br>
 <h1>Categories</h1>
+<br>
+<div class="col-sm-12" align="justify">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-2">
+            <a href="/gitarren" target="_blank">
+                <img class="img-fluid" box-shadow=2px src="./img/guitar.jpg" alt="Flavio"></a>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2">
+            <a href="<?php echo $BASE_URL . '/instruments/articles?category=Schlagzeuge' ?>" target="_blank">
+                <img class="img-fluid" src="./img/keyboard.jpg" alt="Flavio"></a>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2">
+            <a href="<?php echo $BASE_URL . '/instruments/articles?category=Blasinstrumente' ?>" target="_blank">
+                <img class="img-fluid" src="./img/ukulele.jpg" alt="Flavio"></a>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-2">
+            <a href="<?php echo $BASE_URL . '/instruments/articles?category=Tasteninstrumente' ?>" target="_blank">
+                <img class="img-fluid" box-shadow=2px src="./img/keyboard.jpg" alt="Flavio"></a>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2">
+            <a href="<?php echo $BASE_URL . '/instruments/articles?category=Eventtechnik' ?>" target="_blank">
+                <img class="img-fluid" src="./img/keyboard.jpg" alt="Flavio"></a>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2">
+            <a href="<?php echo $BASE_URL . '/instruments/articles?category=DJ equipment' ?>" target="_blank">
+                <img class="img-fluid" src="./img/ukulele.jpg" alt="Flavio"></a>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>

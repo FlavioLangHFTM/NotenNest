@@ -5,4 +5,15 @@ div {
 
 img {
     box-shadow: 2px 2px 4px;
+    color: black;
+}
+
+a {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--bs-primary);
 }

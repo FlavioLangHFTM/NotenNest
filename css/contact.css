@@ -10,3 +10,7 @@ textarea {
     margin: 8px 0;
     box-sizing: border-box;
 }
+
+input:hover {
+    color: var(--bs-primary);
+}

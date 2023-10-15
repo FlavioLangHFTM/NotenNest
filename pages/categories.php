@@ -1,5 +1,5 @@
 <head>
-    <link href="/NotenNest/css/home.css" rel="stylesheet">
+    <link href="/NotenNest/css/categories.css" rel="stylesheet">
 </head>
 
 <style>
@@ -9,24 +9,24 @@
     }
 </style>
 <br>
-<h1>Categories</h1>
+<h1>Kategorien</h1>
 <br>
 <div class="col-sm-12" align="justify">
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-2">
             <a href="<?php echo $BASE_URL . '/instruments/articles?category=Schlagzeuge' ?>" target="_blank">
-                <img class="img-fluid" box-shadow=2px src="./img/guitar.jpg" alt="Flavio"></a>
+                <img class="img-fluid" box-shadow=2px src="./img/guitar.jpg" alt="Flavio">Gitarren</a>
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-2">
             <a href="<?php echo $BASE_URL . '/instruments/articles?category=Schlagzeuge' ?>" target="_blank">
-                <img class="img-fluid" src="./img/keyboard.jpg" alt="Flavio"></a>
+                <img class="img-fluid" src="./img/drums.jpg" alt="Flavio">Schlagzeuge</a>
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-2">
             <a href="<?php echo $BASE_URL . '/instruments/articles?category=Blasinstrumente' ?>" target="_blank">
-                <img class="img-fluid" src="./img/ukulele.jpg" alt="Flavio"></a>
+                <img class="img-fluid" src="./img/trumpet.jpg" alt="Flavio">Blasinstrumente</a>
         </div>
         <div class="col-sm-2"></div>
     </div>
@@ -35,17 +35,17 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-2">
             <a href="<?php echo $BASE_URL . '/instruments/articles?category=Tasteninstrumente' ?>" target="_blank">
-                <img class="img-fluid" box-shadow=2px src="./img/keyboard.jpg" alt="Flavio"></a>
+                <img class="img-fluid" box-shadow=2px src="./img/keyboard.jpg" alt="Flavio">Tasteninstrumene</a>
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-2">
             <a href="<?php echo $BASE_URL . '/instruments/articles?category=Eventtechnik' ?>" target="_blank">
-                <img class="img-fluid" src="./img/keyboard.jpg" alt="Flavio"></a>
+                <img class="img-fluid" src="./img/event.jpg" alt="Flavio">Eventtechnik</a>
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-2">
             <a href="<?php echo $BASE_URL . '/instruments/articles?category=DJ equipment' ?>" target="_blank">
-                <img class="img-fluid" src="./img/ukulele.jpg" alt="Flavio"></a>
+                <img class="img-fluid" src="./img/dj.jpg" alt="Flavio">DJ equipment</a>
         </div>
         <div class="col-sm-2"></div>
     </div>

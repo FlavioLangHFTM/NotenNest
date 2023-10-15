@@ -3,7 +3,7 @@
 <div id="header" class="container-fluid p-0 shadow" style="height: 64px;">
     <nav class="h-100 navbar navbar-expand-lg bg-body-tertiary p-0">
         <div id="navbar-container" class="container-fluid h-100">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="<?php echo $BASE_URL . '/'?>">
                 <h2>NotenNest</h2>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -37,12 +37,9 @@
         </div>
     </nav>
 </div>
-<div id="content" class="" style="height: calc(100hv - 128px);">
+<!-- <div id="content" class="" style="height: calc(100hv - 128px);"> -->
+<div id="mainContent" style="flex: 1; padding: 20px; min-height: calc(100vh - 128px);">
     <?php
-    // if (str_contains($CURRENT_PATH, '/instrumente/')) {
-    
-    // }
-
     function shouldBeHighlighted($url) {
         if (str_contains($GLOBALS['CURRENT_PATH'], $url)) {
             echo 'nav-item_selected';

@@ -7,7 +7,7 @@
   <title>NotenNest</title>
 
   <link href="/NotenNest/bootstrap/main.css" rel="stylesheet">
-  <!-- <link href="css/index.css" rel="stylesheet"> -->
+  <link href="css/index.css" rel="stylesheet">
   <script src="/NotenNest/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
@@ -22,7 +22,7 @@
   $BASE_URL = '/NotenNest';
 
   // Get the request path
-  $request = $_SERVER['REQUEST_URI'];
+  $request = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);;
 
   // Remove the base url from the request path.
   // This allows us to always get the current path no matter in what folder the website is hosted in.
@@ -32,9 +32,15 @@
   // Load utility functions
   require __DIR__ . '/util/utils.php';
 
+  // Load globals
+  require __DIR__ . '/util/globals.php';
+
   // Loade the header
   require __DIR__ . '/header.php';
-
+  
+  // Create DB Service
+  require __DIR__ . '/util/dbService.php';
+  $DB_SERVICE = new dbService();
 
   // Check current path and load the corresponding page
   // Add routing for new pages here
@@ -56,6 +62,9 @@
       break;
     case '/about':
       require __DIR__ . '/pages/about.php';
+      break;
+    case '/instruments/articles':
+      require __DIR__ . '/pages/articles.php';
       break;
     default:
       require __DIR__ . '/pages/notFound.php';

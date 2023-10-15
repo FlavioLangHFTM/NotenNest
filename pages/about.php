@@ -48,11 +48,7 @@
                     <br>
                     <h3>Flavio Lang</h3>
                     <br>
-                    <p>Als langjähriger Schlagzeuger, Militärmusikant und Person, die es generell
-                        präferiert 'wenns chli
-                        chlefelet' hat sich Flavio Lang seit Jahren um die Entstehung von NotenNest bemüht und ist
-                        ein
-                        wertvolles Gründungsmitglied der Firma.</p>
+
                 </div>
                 <div class="col-sm-2"></div>
                 <div class="col-sm-2">
@@ -60,6 +56,21 @@
                     <br>
                     <h3>Florian Hegg</h3>
                     <br>
+
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-3">
+                    <p>Als langjähriger Schlagzeuger, Militärmusikant und Person, die es generell
+                        präferiert 'wenns chli
+                        chlefelet' hat sich Flavio Lang seit Jahren um die Entstehung von NotenNest bemüht und ist
+                        ein
+                        wertvolles Gründungsmitglied der Firma.</p>
+                </div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-3">
                     <p>Flo ist durch seine anfängliche DJ-Karriere schon früh dafür bekannt gewesen
                         zu
                         viel Geld für
@@ -67,11 +78,10 @@
                         bewältigen
                         hat ihm also in die Karten gespielt.</p>
                 </div>
-                <div class="col-sm-3"></div>
+                <div class="col-sm-2"></div>
             </div>
         </div>
+        <br>
+        <br>
+        <br>
     </div>
-    <br>
-    <br>
-    <br>
-</div>

@@ -1,3 +1,8 @@
 .itemCard:hover {
     box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.15) !important;
 }
+
+#pageContainer {
+    max-height: 100%;
+    overflow-y: scroll;
+}

@@ -7,7 +7,7 @@
   <title>NotenNest</title>
 
   <link href="/NotenNest/bootstrap/main.css" rel="stylesheet">
-  <link href="css/index.css" rel="stylesheet">
+  <link href="/NotenNest/css/index.css" rel="stylesheet">
   <script src="/NotenNest/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
@@ -51,7 +51,7 @@
     case '/home':
       require __DIR__ . '/pages/home.php';
       break;
-    case '/instruments/categories':
+    case '/instruments':
       require __DIR__ . '/pages/categories.php';
       break;
     case '/partners':

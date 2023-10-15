@@ -1,14 +1,18 @@
+<head>
+    <link href="/NotenNest/css/home.css" rel="stylesheet">
+</head>
+
 <style>
     body {
         background-image: linear-gradient(0deg, rgba(215, 215, 217, 1) 20%, rgba(217, 215, 216, 0) 100%), url('./img/background3.jpg');
         background-repeat: no-repeat;
     }
 </style>
-<div class="col-sm-12" align="center">
+<div class="col-sm-12">
     <br>
     <h1 color="white">Über die Firma</h1>
     <br>
-    <div class="row" align="justify">
+    <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
             <p>
@@ -44,7 +48,7 @@
                     <br>
                     <h3>Flavio Lang</h3>
                     <br>
-                    <p align="justify">Als langjähriger Schlagzeuger, Militärmusikant und Person, die es generell
+                    <p>Als langjähriger Schlagzeuger, Militärmusikant und Person, die es generell
                         präferiert 'wenns chli
                         chlefelet' hat sich Flavio Lang seit Jahren um die Entstehung von NotenNest bemüht und ist
                         ein
@@ -56,7 +60,7 @@
                     <br>
                     <h3>Florian Hegg</h3>
                     <br>
-                    <p align="justify">Flo ist durch seine anfängliche DJ-Karriere schon früh dafür bekannt gewesen
+                    <p>Flo ist durch seine anfängliche DJ-Karriere schon früh dafür bekannt gewesen
                         zu
                         viel Geld für
                         modernens Soundequipment auszugeben. Die Idee, das Problem mittels einer eigenen Firma zu
@@ -67,4 +71,7 @@
             </div>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
 </div>

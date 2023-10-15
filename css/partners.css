@@ -1,6 +1,8 @@
-body {
-    div {
-        text-align: justify;
-        text-justify: inter-word;
-    }
+div {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+img {
+    box-shadow: 2px 2px 4px;
 }

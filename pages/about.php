@@ -42,6 +42,7 @@
                 <div class="col-sm-2">
                     <img class="img-fluid" src="./img/flavio.png" alt="Flavio"></img>
                     <br>
+                    <h3>Flavio Lang</h3>
                     <br>
                     <p align="justify">Als langjähriger Schlagzeuger, Militärmusikant und Person, die es generell
                         präferiert 'wenns chli
@@ -53,6 +54,7 @@
                 <div class="col-sm-2">
                     <img class="img-fluid" src="./img/florian.jpeg" alt="Florian"></img>
                     <br>
+                    <h3>Florian Hegg</h3>
                     <br>
                     <p align="justify">Flo ist durch seine anfängliche DJ-Karriere schon früh dafür bekannt gewesen
                         zu
